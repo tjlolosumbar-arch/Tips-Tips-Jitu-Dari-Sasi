@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catatan dari Cacii</title>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #eaeaea;
+      padding: 24px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 620px;
+      width: 100%;
+      animation: fadeIn 1.6s ease;
+    }
+
+    h1 {
+      color: #ff7aa2;
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 6px;
+      animation: slideDown 1.2s ease;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #aaaaaa;
+      margin-bottom: 26px;
+      font-style: italic;
+      animation: fadeIn 2s ease;
+    }
+
+    .box {
+      background-color: #1c1c1c;
+      padding: 22px;
+      border-radius: 18px;
+      animation: slideUp 1.4s ease;
+    }
+
+    ol {
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 14px;
+    }
+
+    .closing {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #cfcfcf;
+      line-height: 1.6;
+    }
+
+    .from {
+      margin-top: 18px;
+      text-align: right;
+      color: #ff7aa2;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 28px;
+      padding: 14px;
+      font-size: 17px;
+      background-color: transparent;
+      color: #ff7aa2;
+      border: 1.5px solid #ff7aa2;
+      border-radius: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff7aa2;
+      color: #121212;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    /* 🎞️ ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Untuk Afandi</h1>
+    <div class="subtitle">disampaikan dengan tenang, sebagai perempuan.</div>
+
+    <div class="box">
+      <p>
+        Kalau ingin mendekati perempuan yang baik,
+        ada beberapa hal yang sebaiknya dijaga.
+      </p>
+
+      <ol>
+        <li>
+          Jaga batas dengan perempuan lain.  
+          Tidak perlu terlihat terlalu dekat atau terlalu ramah.
+        </li>
+
+        <li>
+          Jaga cara berbicara.  
+          Perempuan menilai dari tutur, sikap, dan kedewasaan.
+        </li>
+
+        <li>
+          Hindari situasi yang bisa menimbulkan salah paham  
+          atau cerita yang sampai ke orang yang tidak perlu.
+        </li>
+
+        <li>
+          Menjadi diri sendiri itu penting,  
+          tapi usaha juga bagian dari keseriusan.
+        </li>
+      </ol>
+
+      <div class="closing">
+        Semoga dimudahkan langkahnya.  
+        Memantaskan diri itu proses, bukan tekanan.  
+        <br><br>
+        Yang ini terasa berbeda,  
+        jadi bijaklah memilih cara.
+      </div>
+
+      <div class="from">— Cacii</div>
+
+      <button onclick="kirimWA()">
+        AKU SIAP BERJUANG
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    function kirimWA() {
+      const nomorCacii = "628XXXXXXXXXX"; 
+      // 🔁 GANTI DENGAN NOMOR WA KAMU
+
+      const pesan = encodeURIComponent(
+        "terima kasih atas pesannya. aku siap berjuang, doakan ya."
+      );
+
+      window.open(
+        `https://wa.me/${nomorCacii}?text=${pesan}`,
+        "_blank"
+      );
+    }
+  </script>
+
+</body>
+</html>
