@@ -3,131 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catatan dari Cacii</title>
+<title>Surat dari Cacii 💌</title>
 
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
-<meta name="theme-color" content="#121212">
+<meta name="theme-color" content="#b6d9ff">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  background: #121212;
-  font-family: Arial, sans-serif;
-  color: #eaeaea;
 }
 
 body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 16px;
+  animation: fadeIn 1.5s ease;
 }
 
-/* 📩 AMPL O P */
+/* AMPL0P */
 .envelope {
-  width: 280px;
-  height: 180px;
-  background: #1c1c1c;
-  border-radius: 16px;
+  width: 100%;
+  max-width: 620px;
+  background-color: #b6d9ff;
+  border-radius: 22px;
+  padding: 22px;
   position: relative;
-  cursor: pointer;
-  animation: fadeIn 1.6s ease;
+
+  animation: slideUp 1.4s ease;
 }
 
-.flap {
+/* PITA */
+.ribbon {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50%;
-  background: #2a2a2a;
-  border-radius: 16px 16px 0 0;
-  transform-origin: top;
-  transition: transform 1.3s ease;
-}
-
-.envelope.open .flap {
-  transform: rotateX(160deg);
-}
-
-.tap {
-  position: absolute;
-  bottom: 18px;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.6;
-}
-
-/* ✉️ ISI SURAT */
-.container {
-  display: none;
-  max-width: 650px;
-  width: 100%;
-  padding: 24px;
-}
-
-.envelope.open + .container {
-  display: block;
-}
-
-.box {
-  background-color: #1c1c1c;
-  padding: 26px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff9fc1;
+  color: #121212;
+  padding: 6px 18px;
   border-radius: 20px;
-  animation: slideUp 1.5s ease forwards;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* KERTAS ISI */
+.letter {
+  background-color: #ffffff;
+  color: #2a2a2a;
+  border-radius: 16px;
+  padding: 22px;
+  margin-top: 20px;
+
+  animation: openLetter 1.6s ease;
 }
 
 p {
-  line-height: 1.8;
+  line-height: 1.7;
   margin-bottom: 14px;
+  font-size: 15px;
 }
 
+/* TOMBOL */
 button {
   width: 100%;
-  margin-top: 30px;
-  padding: 15px;
-  font-size: 16px;
+  margin-top: 26px;
+  padding: 14px;
+  font-size: 15px;
+
   background-color: transparent;
-  color: #ff8fb1;
-  border: 1.5px solid #ff8fb1;
-  border-radius: 16px;
+  color: #ff6fa1;
+  border: 1.5px solid #ff6fa1;
+  border-radius: 14px;
+
   transition: all 0.35s ease;
 }
 
 button:hover {
-  background-color: #ff8fb1;
-  color: #121212;
+  background-color: #ff6fa1;
+  color: #ffffff;
 }
 
 button:active {
   transform: scale(0.96);
 }
 
+/* RESPONSIVE HP */
+@media (max-width: 480px) {
+  .letter {
+    padding: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+/* ANIMASI */
 @keyframes fadeIn {
   from { opacity: 0 }
   to { opacity: 1 }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(24px) }
-  to { opacity: 1; transform: translateY(0) }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes openLetter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 📩 AMPL O P -->
-<div class="envelope" onclick="bukaSurat()">
-  <div class="flap"></div>
-  <div class="tap">📩 ketuk untuk membuka</div>
-</div>
+<div class="envelope">
+  <div class="ribbon">💌 from Cacii</div>
 
-<!-- ✉️ SURAT -->
-<div class="container" id="surat">
-  <div class="box">
+  <div class="letter">
 
 <p>🌷 <strong>nih yah, i will tell to u as a women.</strong></p>
 
@@ -169,13 +189,6 @@ Kalau mau nanya-nanya bolehh bangett, apalagi saya brandingannya rada kalem :>
 </div>
 
 <script>
-function bukaSurat() {
-  document.querySelector(".envelope").classList.add("open");
-  setTimeout(() => {
-    document.getElementById("surat").scrollIntoView({ behavior: "smooth" });
-  }, 600);
-}
-
 function kirimWA() {
   const nomor = "6285271960542";
   const pesan = encodeURIComponent("terimakasih tipsnya, wish me luck");
