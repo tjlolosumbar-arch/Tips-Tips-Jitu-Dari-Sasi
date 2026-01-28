@@ -23,68 +23,32 @@
     }
 
     .container {
-      max-width: 620px;
+      max-width: 650px;
       width: 100%;
-      animation: fadeIn 1.6s ease;
-    }
-
-    h1 {
-      color: #ff7aa2;
-      text-align: center;
-      font-size: 26px;
-      margin-bottom: 6px;
-      animation: slideDown 1.2s ease;
-    }
-
-    .subtitle {
-      text-align: center;
-      font-size: 13px;
-      color: #aaaaaa;
-      margin-bottom: 26px;
-      font-style: italic;
-      animation: fadeIn 2s ease;
+      animation: fadeIn 1.5s ease;
     }
 
     .box {
       background-color: #1c1c1c;
-      padding: 22px;
+      padding: 24px;
       border-radius: 18px;
-      animation: slideUp 1.4s ease;
+      animation: slideUp 1.3s ease;
     }
 
-    ol {
-      padding-left: 18px;
-    }
-
-    li {
+    p {
+      line-height: 1.7;
       margin-bottom: 14px;
-    }
-
-    .closing {
-      margin-top: 24px;
-      font-size: 14px;
-      color: #cfcfcf;
-      line-height: 1.6;
-    }
-
-    .from {
-      margin-top: 18px;
-      text-align: right;
-      color: #ff7aa2;
-      font-weight: 500;
-      font-size: 14px;
     }
 
     button {
       width: 100%;
       margin-top: 28px;
       padding: 14px;
-      font-size: 17px;
+      font-size: 16px;
       background-color: transparent;
       color: #ff7aa2;
       border: 1.5px solid #ff7aa2;
       border-radius: 14px;
-      font-weight: 500;
       transition: all 0.3s ease;
     }
 
@@ -97,7 +61,7 @@
       transform: scale(0.97);
     }
 
-    /* 🎞️ ANIMATIONS */
+    /* animasi pelan */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -107,78 +71,61 @@
       from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 
 <body>
   <div class="container">
-
-    <h1>Untuk Afandi</h1>
-    <div class="subtitle">disampaikan dengan tenang, sebagai perempuan.</div>
-
     <div class="box">
+
+      <p><strong>nih yah, i will tell to u as a women.</strong></p>
+
       <p>
-        Kalau ingin mendekati perempuan yang baik,
-        ada beberapa hal yang sebaiknya dijaga.
+        Jadi kalau mau deketin cewek, apalagi yang alim Ma Syaa Allah, harusnya:
       </p>
 
-      <ol>
-        <li>
-          Jaga batas dengan perempuan lain.  
-          Tidak perlu terlihat terlalu dekat atau terlalu ramah.
-        </li>
+      <p>
+        1. anda harus jaga jarak sama perempuan, jangan keliatan di depan dia kalau anda deket
+        (dalam artian terlalu friendly) sama perempuan
+      </p>
 
-        <li>
-          Jaga cara berbicara.  
-          Perempuan menilai dari tutur, sikap, dan kedewasaan.
-        </li>
+      <p>
+        2. jangan pernah ngomong kasar di depannya, harus bisa bikin branding diri yang baik,
+        berwibawa, dewasa, tidak berkata kasar
+      </p>
 
-        <li>
-          Hindari situasi yang bisa menimbulkan salah paham  
-          atau cerita yang sampai ke orang yang tidak perlu.
-        </li>
+      <p>
+        3. jaga jarak sama orang yang sekiranya anda akan di paparazi in
+        (in case saya, jadi jangan sampai anda dipaparaziin sama saya , apalgi sampai diliat si doi)
+      </p>
 
-        <li>
-          Menjadi diri sendiri itu penting,  
-          tapi usaha juga bagian dari keseriusan.
-        </li>
-      </ol>
+      <p>
+        4. sebenarnya boleh ajah si jadi diri sendiri, tapi ini tips biar dia bisa tertarik dengan anda.
+      </p>
 
-      <div class="closing">
-        Semoga dimudahkan langkahnya.  
-        Memantaskan diri itu proses, bukan tekanan.  
-        <br><br>
-        Yang ini terasa berbeda,  
-        jadi bijaklah memilih cara.
-      </div>
+      <p>
+        Semoga berhasil deh, semangat memantaskan diri biar anda PD suka sama Aqeela
+        (fr kayaknya yang ini beda tipe sama kak enje, jadi JANGAN LUPA PAKAI STRATEGI).
+      </p>
 
-      <div class="from">— Cacii</div>
+      <p>
+        Kalau mau nanya-nanya bolehh bangett, apalagi saya brandingannya rada kalem :>
+      </p>
 
       <button onclick="kirimWA()">
         AKU SIAP BERJUANG
       </button>
-    </div>
 
+    </div>
   </div>
 
   <script>
     function kirimWA() {
-      const nomorCacii = "628XXXXXXXXXX"; 
-      // 🔁 GANTI DENGAN NOMOR WA KAMU
-
+      const nomorCacii = "628XXXXXXXXXX"; // GANTI NOMOR WA KAMU
       const pesan = encodeURIComponent(
-        "terima kasih atas pesannya. aku siap berjuang, doakan ya."
+        "terimakasih tipsnya, wish me luck"
       );
-
-      window.open(
-        `https://wa.me/${nomorCacii}?text=${pesan}`,
-        "_blank"
-      );
+      window.open(`https://wa.me/${nomorCacii}?text=${pesan}`, "_blank");
     }
   </script>
 
