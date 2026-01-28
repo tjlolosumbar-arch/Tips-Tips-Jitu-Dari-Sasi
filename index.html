@@ -1,134 +1,191 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catatan dari Cacii</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catatan dari Cacii</title>
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#121212">
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #eaeaea;
-      padding: 24px;
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #121212;
+  font-family: Arial, sans-serif;
+  color: #eaeaea;
+}
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .container {
-      max-width: 650px;
-      width: 100%;
-      animation: fadeIn 1.5s ease;
-    }
+/* 📩 AMPL O P */
+.envelope {
+  width: 280px;
+  height: 180px;
+  background: #1c1c1c;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  animation: fadeIn 1.6s ease;
+}
 
-    .box {
-      background-color: #1c1c1c;
-      padding: 24px;
-      border-radius: 18px;
-      animation: slideUp 1.3s ease;
-    }
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background: #2a2a2a;
+  border-radius: 16px 16px 0 0;
+  transform-origin: top;
+  transition: transform 1.3s ease;
+}
 
-    p {
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
+.envelope.open .flap {
+  transform: rotateX(160deg);
+}
 
-    button {
-      width: 100%;
-      margin-top: 28px;
-      padding: 14px;
-      font-size: 16px;
-      background-color: transparent;
-      color: #ff7aa2;
-      border: 1.5px solid #ff7aa2;
-      border-radius: 14px;
-      transition: all 0.3s ease;
-    }
+.tap {
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+}
 
-    button:hover {
-      background-color: #ff7aa2;
-      color: #121212;
-    }
+/* ✉️ ISI SURAT */
+.container {
+  display: none;
+  max-width: 650px;
+  width: 100%;
+  padding: 24px;
+}
 
-    button:active {
-      transform: scale(0.97);
-    }
+.envelope.open + .container {
+  display: block;
+}
 
-    /* animasi pelan */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+.box {
+  background-color: #1c1c1c;
+  padding: 26px;
+  border-radius: 20px;
+  animation: slideUp 1.5s ease forwards;
+}
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+p {
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #ff8fb1;
+  border: 1.5px solid #ff8fb1;
+  border-radius: 16px;
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  background-color: #ff8fb1;
+  color: #121212;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="box">
 
-      <p><strong>nih yah, i will tell to u as a women.</strong></p>
+<!-- 📩 AMPL O P -->
+<div class="envelope" onclick="bukaSurat()">
+  <div class="flap"></div>
+  <div class="tap">📩 ketuk untuk membuka</div>
+</div>
 
-      <p>
-        Jadi kalau mau deketin cewek, apalagi yang alim Ma Syaa Allah, harusnya:
-      </p>
+<!-- ✉️ SURAT -->
+<div class="container" id="surat">
+  <div class="box">
 
-      <p>
-        1. anda harus jaga jarak sama perempuan, jangan keliatan di depan dia kalau anda deket
-        (dalam artian terlalu friendly) sama perempuan
-      </p>
+<p>🌷 <strong>nih yah, i will tell to u as a women.</strong></p>
 
-      <p>
-        2. jangan pernah ngomong kasar di depannya, harus bisa bikin branding diri yang baik,
-        berwibawa, dewasa, tidak berkata kasar
-      </p>
+<p>
+Jadi kalau mau deketin cewek, apalagi yang alim Ma Syaa Allah, berikut tips-tips (created by me :>):
+</p>
 
-      <p>
-        3. jaga jarak sama orang yang sekiranya anda akan di paparazi in
-        (in case saya, jadi jangan sampai anda dipaparaziin sama saya , apalgi sampai diliat si doi)
-      </p>
+<p>
+1. Kamu harus jaga jarak sama perempuan, jangan keliatan di depan dia kalau kamu deket
+(dalam artian terlalu friendly) sama perempuan
+</p>
 
-      <p>
-        4. sebenarnya boleh ajah si jadi diri sendiri, tapi ini tips biar dia bisa tertarik dengan anda.
-      </p>
+<p>
+2. jangan pernah ngomong kasar di depannya, harus bisa bikin branding diri yang baik,
+berwibawa, dewasa, tidak berkata kasar (say no to anjir, anjay, anjing, dan teman-temannya) T_T
+</p>
 
-      <p>
-        Semoga berhasil deh, semangat memantaskan diri biar anda PD suka sama Aqeela
-        (fr kayaknya yang ini beda tipe sama kak enje, jadi JANGAN LUPA PAKAI STRATEGI).
-      </p>
+<p>
+3. jaga jarak sama orang yang sekiranya kamu akan di paparazi in
+(in case sama saya, jadi jangan sampai kamu dipaparaziin sama saya , apalgi sampai diliat si doi) amitt-amitt, nanti dia ilfil lagii
+</p>
 
-      <p>
-        Kalau mau nanya-nanya bolehh bangett, apalagi saya brandingannya rada kalem :>
-      </p>
+<p>
+4. sebenarnya boleh ajah si jadi diri sendiri, tapi ini tips biar dia bisa tertarik dengan anda.
+</p>
 
-      <button onclick="kirimWA()">
-        AKU SIAP BERJUANG
-      </button>
+<p>
+Semoga berhasil deh, semangat memantaskan diri biar anda PD suka sama si doi (Aqeela) cihuyyy
+(fr kayaknya yang ini beda tipenya sama kak enje, jadi JANGAN LUPA PAKAI STRATEGI).
+</p>
 
-    </div>
+<p>
+Kalau mau nanya-nanya bolehh bangett, apalagi saya brandingannya rada kalem :>
+</p>
+
+<button onclick="kirimWA()">💪 aku siap berjuang</button>
+
   </div>
+</div>
 
-  <script>
-    function kirimWA() {
-      const nomorCacii = "6285271960542"; // GANTI NOMOR WA KAMU
-      const pesan = encodeURIComponent(
-        "terimakasih tipsnya, wish me luck"
-      );
-      window.open(`https://wa.me/${nomorCacii}?text=${pesan}`, "_blank");
-    }
-  </script>
+<script>
+function bukaSurat() {
+  document.querySelector(".envelope").classList.add("open");
+  setTimeout(() => {
+    document.getElementById("surat").scrollIntoView({ behavior: "smooth" });
+  }, 600);
+}
+
+function kirimWA() {
+  const nomor = "6285271960542";
+  const pesan = encodeURIComponent("terimakasih tipsnya, wish me luck");
+  window.open(`https://wa.me/${nomor}?text=${pesan}`, "_blank");
+}
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
 
 </body>
 </html>
-
